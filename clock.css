@@ -1,0 +1,41 @@
+#clock {
+  width : 720px;
+  height : 720px;
+  margin : 0 auto;
+  position : relative;
+}
+
+#long{
+  border-radius: 10px;
+  height: 20px; /* 線幅 */
+  position: absolute;
+  right: calc(50% - 5px); /* 位置調整 線幅の半分ずらす */
+  top: calc(50% - 5px); /* 位置調整 線幅の半分ずらす */
+  transform-origin: calc(100% - 5px) center; /* アニメーションの中心軸 線幅の半分ずらす */
+  width: 40%;
+  background: black;
+}
+
+#short {
+  background-color: #092cc9;
+  border-radius: 5px;
+  height: 20px; /* 線幅 */
+  position: absolute;
+  right: calc(50% - 5px); /* 位置調整 線幅の半分ずらす */
+  top: calc(50% - 5px); /* 位置調整 線幅の半分ずらす */
+  transform-origin: calc(100% - 5px) center; /* アニメーションの中心軸 線幅の半分ずらす */
+  width: 20%;
+}
+
+#handWrap {
+  position : absolute;
+  width : 720px;
+  height : 720px;
+  text-align : center;
+}
+
+#second {
+  display : inline-block;
+  color : rgba(255, 0, 200, 0.5);
+  font-size : 90px;
+}

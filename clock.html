@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="clock.css" />
+</head>
+<body>
+  <div id="clock">
+    <div id="long"></div>
+    <div id="short"></div>
+    <div id="handWrap"><span id="second"></span></div>
+  </div>
+
+  <script>
+    var mHand = document.getElementById('long');
+    var hHand = document.getElementById('short');
+    var sHand = document.getElementById('second');
+    var hWrap = document.getElementById('handWrap');
+
+    var setTime = function(){
+      var now = new Date();
+      var minutes = now.getMinutes();
+      var hours = now.getHours();
+      var second = now.getSeconds();
+      sHand.textContent = second;
+      console.log(minutes);
+      var minutesDeg = minutes * 6 + 90;
+      mHand.style.transform = "rotate(" + minutesDeg + "deg)";
+      var secondDeg = second * 6;
+      hWrap.style.transform = "rotate(" + secondDeg + "deg)";
+      sHand.style.transform = "rotate(-" + secondDeg +"deg)"
+      if(hours >= 0 && hours <= 12){
+        var hoursDeg = hours * 30 +90;
+      } else {
+        var hoursDeg = (hours-12) * 30 + 90;
+      }
+      hHand.style.transform = "rotate(" + hoursDeg + "deg)";
+    };
+
+    setInterval(setTime, 10);
+
+  </script>
+  
+</body>
+</html>
